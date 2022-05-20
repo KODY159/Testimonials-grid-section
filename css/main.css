@@ -1,0 +1,140 @@
+/* import front */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+
+
+/* variable */
+:root {
+
+  /* background */
+  --purple: hsl(263, 55%, 52%);
+  --gray: hsl(217, 19%, 35%);
+  --white:  hsl(210, 46%, 95%);
+  --black: hsl(219, 29%, 14%);
+  --mainBackground: hsl(0, 0%, 81%);
+
+  /* text */
+  --header: hsl(0, 0%, 100%);
+  --paragraph: hsl(223, 6%, 51%);
+
+}
+
+
+
+/* Browser reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 4rem;
+  background-color: var(--mainBackground);
+}
+
+
+
+/* container */
+div.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 30px;
+  background-color: transparent;
+}
+div.grid {
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+
+
+/* items */
+.grid.item1 {
+  grid-column: 1 / 3;
+  background-color: var(--purple);
+}
+.grid.item2 {
+  background-color: var(--gray);
+}
+.grid.item3 {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  background-color: var(--white);
+}
+.grid.item4 {
+  background-color: var(--white);
+}
+.grid.item5 {
+  grid-column: 2 / 4;
+  background-color: var(--black);
+}
+
+
+
+/* profile content */
+div.profile {
+  display: flex;
+  flex-direction: row;
+}
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.profile img.daniel {
+  border: 2px solid hsl(263, 55%, 70%);
+}
+.profile img.patrick {
+  border: 2px solid hsl(263, 84%, 50%);
+}
+ul.name {
+  list-style: none;
+}
+ul.name li {
+  color: var(--white);
+}
+ul.name li.verified {
+  font-size: 15px;
+  color: var(--paragraph);
+}
+ul.name li.gray {
+  color: var(--gray);
+}
+
+
+
+/* content */
+div.content {
+  margin-top: 1.2rem;
+}
+div.content h3 {
+  color: var(--white);
+}
+div.content h3.gray {
+  color: var(--gray);
+}
+div.content p {
+  margin-top: 1.2rem;
+  color: var(--paragraph);
+}
+
+
+
+/* responsive */
+@media only screen and (max-width: 978px) {
+  div.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+  }
+  .grid.item3 {
+    order: 5;
+  }
+}
